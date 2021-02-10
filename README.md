@@ -1,4 +1,6 @@
 # v-book
+A web app where you can view the top 100 classical books
+I use Vue.Js & Vue Router & Json-Server with this project
 
 ## Project setup
 ```
