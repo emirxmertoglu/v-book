@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Books from '../views/books/Books.vue'
 import BookDetails from '../views/books/BookDetails.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -23,6 +24,11 @@ const routes = [
   {
     path: '/all-books',
     redirect: '/books'
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
