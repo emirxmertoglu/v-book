@@ -1,11 +1,12 @@
 <template>
   <div class="book" v-if="book">
-    <h1>{{ book.title }}</h1>
+    <img :src="require(`../../assets/${book.imageLink}`)" />
     <h2>Author: {{ book.author }}</h2>
     <h3>Year: {{ book.year }}</h3>
     <h3>Pages: {{ book.pages }}</h3>
     <h3>Country: {{ book.country }}</h3>
     <h3>Language: {{ book.language }}</h3>
+
     <a :href="book.link" target="_blank">👉 For more info click here 👈</a>
   </div>
   <div v-else>
@@ -22,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    fetch("http://localhost:3000/books/" + this.id)
+    fetch("http://localhost:3000/books/" + this.id.split("&id=")[1])
       .then((res) => res.json())
       .then((data) => (this.book = data))
       .catch((err) => console.log(err.message));
@@ -38,6 +39,7 @@ export default {
   color: #fff;
   padding: 20px;
   border-radius: 20px;
+  border: 3px solid #3f51b5be;
 }
 
 .book a {

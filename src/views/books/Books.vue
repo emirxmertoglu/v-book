@@ -2,7 +2,17 @@
   <div class="books">
     <div v-if="books.length">
       <div v-for="book in books" :key="book.id" class="book">
-        <router-link :to="{ name: 'BookDetails', params: { id: book.id } }">
+        <router-link
+          :to="{
+            name: 'BookDetails',
+            params: {
+              id:
+                book.title.toLowerCase().split(' ').join('-') +
+                '&id=' +
+                book.id,
+            },
+          }"
+        >
           <h2>{{ book.title }}</h2>
         </router-link>
       </div>
@@ -28,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .books a {
   text-decoration: none;
 }
