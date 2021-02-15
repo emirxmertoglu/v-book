@@ -33,10 +33,10 @@ export default {
 
 <style scoped>
 .book {
-  background: #ff5622be;
+  background: rgba(238, 238, 238, 0.5);
   max-width: 500px;
   margin: 20px auto;
-  color: #fff;
+  color: #3f51b5;
   padding: 20px;
   border-radius: 20px;
   border: 3px solid #3f51b5be;
@@ -45,6 +45,6 @@ export default {
 .book a {
   font-weight: 700;
   text-decoration: none;
-  color: #fff;
+  color: #3f51b5;
 }
 </style>
